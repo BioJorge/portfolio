@@ -8,6 +8,14 @@
     <!--Boxicons-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="public/portfolio-style.css">
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("XjVWe7mFT2ODPIZGa");
+        })();
+    </script>
 </head>
 <body>
     <header class="header">
@@ -42,8 +50,8 @@
             </p>
 
             <div class="btn-box">
-                <a href="#" class="btn">Hire Me</a>
-                <a href="#" class="btn">Let's Talk</a>
+                <button class="btn" onclick="scrollToContact()">Hire Me</button>
+                <button href="#" class="btn" onclick="scrollToContact()">Let's Talk</button>
                 <span class="animate" style="--i:6;"></span>
             </div>
         </div>
@@ -308,18 +316,19 @@
         </div>
 
     </section>
+
     <!-- contact section design -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span><span class="animate scroll" style="--i:1;"></span></h2>
 
-        <form action="">
+        <form id="form">
             <div class="input-box">
                 <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="Full Name" id="fullName" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="E-mail adress" required>
+                    <input type="text" placeholder="E-mail adress" id="email" required>
                     <span class="focus"></span>
                 </div>
                 <span class="animate scroll" style="--i:2;"></span>
@@ -327,18 +336,18 @@
 
             <div class="input-box">
                 <div class="input-field">
-                    <input type="number" placeholder="Mobile Number" required>
+                    <input type="number" placeholder="Mobile Number" id="mobile" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="E-mail Subject" required>
+                    <input type="text" placeholder="E-mail Subject" id="subject" required>
                     <span class="focus"></span>
                 </div>
                 <span class="animate scroll" style="--i:3;"></span>
             </div>
 
             <div class="textarea-field">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <textarea name="" cols="30" rows="10" placeholder="Your Message" id="message" required></textarea>
                 <span class="focus"></span>
                 <span class="animate scroll" style="--i:4;"></span>
             </div>

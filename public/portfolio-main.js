@@ -7,6 +7,12 @@ menuIcon.onclick = () =>{
     navbar.classList.toggle('active');
 }
 
+//linking home buttons to
+function scrollToContact(){
+    let contact = document.getElementById('contact');
+    contact.scrollIntoView({ behavior: "smooth" });
+}
+
 
 // scroll section
 let sections = document.querySelectorAll('section');
@@ -47,3 +53,23 @@ window.onscroll = () =>{
     let footer = document.querySelector('footer');
     footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 }
+
+//sending email
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission to avoid page refresh
+
+        let tempVars = {
+            from_name: document.getElementById('fullName').value,
+            from_email: document.getElementById('email').value,
+            from_number: document.getElementById('mobile').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value,
+        };
+
+        emailjs.send('service_ux9fd9q', 'template_1kbro0m', tempVars)
+            .then(function (res) {
+                window.alert('E-mail successfully sent');
+            });
+    });
+});
